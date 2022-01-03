@@ -10,9 +10,13 @@ const ReplySchema = new Schema(
     },
     replyBody: {
       type: String,
+      required: 'Reply must contain text.',
+      trim: true,
     },
     writtenBy: {
       type: String,
+      required: 'A reply needs a replier.',
+      trim: true,
     },
     createdAt: {
       type: Date,
@@ -31,9 +35,13 @@ const CommentSchema = new Schema(
   {
     writtenBy: {
       type: String,
+      required: 'A comment needs a commenter.',
+      trim: true,
     },
     commentBody: {
       type: String,
+      required: 'A comment needs text.',
+      trim: true,
     },
     createdAt: {
       type: Date,
